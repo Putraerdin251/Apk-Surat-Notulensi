@@ -1,0 +1,265 @@
+* {
+    font-family: 'Times New Roman', 'sans-serif';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* colors */
+    --body-color: #E4E9F7;
+    --sidebar-color: #fff;
+    --primary-color: linear-gradient(to right, #004aad, #cb6ce6);
+    --primary-color-light: #f6f5ff;
+    --toggle-color: #ddd;
+    --text-color: #707070;
+
+    /* transition */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+body {
+    display: flex; /* Menggunakan flexbox untuk layout */
+    min-height: 100vh;
+    background-image: url(./Asset/img/BG_Bps_1.png);
+    transition: var(--tran-05);
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    width: 88px;
+    flex: 0 0 auto;
+    padding: 10px 14px;
+    transition: var(--tran-05);
+    z-index: 100;
+    height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: var(--primary-color-light); /* Contoh background untuk sidebar */
+}
+
+.main-content {
+    flex: 1; /* Memanjangkan konten utama agar mengisi sisa ruang */
+    padding: 20px; /* Memberi ruang dari sidebar */
+}
+
+/* ========== Resuable CSS ============ */
+.sidebar .text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar .image {
+    min-width: 60px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    margin: 10px;
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.sidebar li .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+    
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--text-color);
+    transition: var(--tran-02);
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar .image-text img {
+    width: 40px;
+    border-radius: 6px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.sidebar header .image {
+    display: flex;
+    align-items: center;
+}
+
+header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .menu {
+    margin-top: 35px;
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 35px;
+}
+
+.sidebar li a:hover {
+    background: #F4C34d;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+.sidebar .menu-bar {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.search-container {
+    position: relative;
+    margin-left: 10%;
+    width: 50%;
+}
+
+.search-container input[type="text"] {
+    padding: 10px 30px 10px 40px; /* Atur padding untuk menampung ikon di kiri */
+    margin-left: 55%;
+    font-size: 17px; /* Ukuran font input */
+    border: 1px solid rgb(117, 117, 117); /* Gaya border */
+    border-radius: 30px; /* Border radius */
+    width: 15em; /* Lebar input */
+    box-sizing: border-box; /* Memastikan ukuran total input tetap sesuai */
+}
+
+.search-container .bx-search {
+    position: absolute;
+    left: 57%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+    .search-container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .search-container input[type="text"] {
+        padding: 10px 15px;
+        font-size: 14px;
+        width: calc(100% - 22px);
+    }
+}
+
+@media screen and (max-width: 4px) {
+    .search-container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .search-container input[type="text"] {
+        padding: 10px 15px;
+        font-size: 14px;
+        width: calc(100% - 22px);
+    }
+}
+
+
+/* Komentar untuk style yang tidak diperlukan
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 25px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 22px;
+    transition: var(--tran-03);
+    margin-top: 20px;
+} */
+ /* Gaya khusus untuk cetak */
+@media print {
+.sidebar {
+display: none; /* Sembunyikan sidebar saat mencetak */
+}
+
+.menu {
+display: none; /* Sembunyikan menu cetak saat mencetak */
+}
+}
+/* Gaya untuk menu */
+.menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.menu button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex; /* Menggunakan flexbox untuk layout */
+    align-items: center; /* Mengatur item ke tengah vertikal */
+}
+
+.menu button:hover {
+    background-color:var(--hover-color);
+}
+
+.menu button span {
+    margin-left: 5px;
+    justify-content: center;
+}
+
+/* Gaya khusus untuk cetak */
+@media print {
+    .sidebar {
+        display: none; /* Sembunyikan sidebar saat mencetak */
+    }
+
+    .menu {
+        display: none; /* Sembunyikan menu cetak saat mencetak */
+    }
+}

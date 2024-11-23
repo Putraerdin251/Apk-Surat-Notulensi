@@ -1,0 +1,175 @@
+@page {
+    size: A4;
+    margin-bottom: 0;
+    /* page-break-inside: avoid; */
+  }
+
+.page-break {
+    margin: 2cm;
+    page-break-before: always; /* Selalu mulai elemen baru di halaman baru */
+}
+
+body,
+p,
+td,
+span,
+strong {
+    font-family: 'Times New Roman';
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-size: .12p;
+}
+
+.notulensi {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+ @media print {
+
+    @page {
+        size: A4;
+        /* margin: 2cm; */
+        page-break-before: always;
+      }
+
+    body {
+        padding-top: 0cm;
+        padding-bottom: 0cm;
+        margin: 0;
+    }
+    /* .foto-dokumentasi {
+        page-break-before: always;
+    } */
+
+    .container {
+        /* page-break-inside: avoid; */
+        /* margin-bottom: 3rem; */
+    }
+
+    /* footer {
+        page-break-after: avoid;
+    }
+
+    header {
+        page-break-after: always;
+    } */
+    .content {
+        page-break-inside: avoid; /* Hindari pemisahan konten di tengah halaman */
+    }
+}
+
+
+/* @media print {
+    @page {
+        size: A4;
+        padding-bottom: 20cm; /* untuk mengubah marginnya */
+        
+  
+    */
+
+.line-spacing-1 {
+    line-height: 1em;
+}
+
+.paragraph-spacing-1 p {
+    margin-bottom: 1em;
+}
+
+/* Add custom styles for the table */
+
+.custom-table {
+    margin: 0 auto;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+}
+
+.custom-table th,
+.custom-table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.custom-table img {
+    width: 700%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Custom styles for signature images */
+.signature img {
+    max-width: 140px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.signature strong {
+    display: block;
+    margin-top: 10px;
+}
+
+.menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.menu button {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+ 
+.menu button:hover {
+    background-color: #48bb78;
+}
+
+.menu button svg {
+    margin-right: 5px;
+}
+
+.menu button p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.custom-table th,
+.custom-table td {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.custom-table th {
+  width: 150px;
+}
+
+.custom-table td {
+  width: calc(100% - 150px);
+}
+
+.signature {
+    margin-top: 10px; /* Atur margin jika diperlukan */
+}
+
+.flex {
+    display: flex;
+}
+  
+.justify-between {
+    justify-content: space-between; /* Memastikan kedua bagian sejajar */
+}
+  
+.items-center {
+    align-items: center; /* Posisi vertikal agar sejajar */
+}
